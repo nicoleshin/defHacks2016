@@ -4,9 +4,14 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 public class Application extends JFrame {
+
+    public static final String SEPARATOR = System.getProperty("file.separator");
+    private Blob blob;
     
     public Application() {
         setScreen();
+        blob = new Blob();
+        blob.setSprite("img/circle.jpg");
     }
     
     public void setScreen() {
