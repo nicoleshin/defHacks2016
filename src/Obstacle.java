@@ -10,13 +10,15 @@ public class Obstacle {
     private ImageIcon icon;
     private double speed;
 
-    private int[] spriteSize;
-    private int[] spriteLocation;
+    public int[] spriteSize;
+    public int spriteX;
+    public final int spriteY;
 
     private Application application;
     
     public Obstacle() {
         application = new Application();
+        spriteY = 700;
     }
     
     public double getSpeed() {
@@ -43,7 +45,8 @@ public class Obstacle {
     }
 
     public void drawEntity(Graphics g) {
-        g.drawImage(sprite, spriteLocation[0], spriteLocation[1], spriteSize[0], spriteSize[1], null);
+        g.drawImage(this.sprite, this.spriteX, this.spriteY,
+                this.spriteSize[0], this.spriteSize[1], null);
     }
 
 }
