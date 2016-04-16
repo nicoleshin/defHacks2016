@@ -1,13 +1,29 @@
+import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 public class Application extends JFrame {
+    
     public Application() {
-        init();
+        setScreen();
     }
-    public void init() {
-        setSize(1024,576);
+    
+    public void setScreen() {
+        setSize(1024,768);
+        setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
+        setLocationRelativeTo(null);
     }
+    
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Application frame = new Application();
+                frame.setVisible(true);
+            }
+        });
+    }
+    
 }
